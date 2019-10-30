@@ -1,11 +1,10 @@
-import Nav from '../components/nav'
+import Layout from '../layout/MainLayout'
 const Product = () => {
-  return (
-    <div>
-      <Nav />
-      Product
-    </div>
-  )
+    return (
+        <Layout>
+            Product
+        </Layout>
+    )
 }
 
 export default Product

@@ -1,11 +1,11 @@
-import Nav from '../components/nav'
+import Layout from '../layout/MainLayout'
+
 const Manage = () => {
-  return (
-    <div>
-      <Nav/>
-      Manage
-    </div>
-  )
+    return (
+        <Layout>
+            Manage
+    </Layout>
+    )
 }
 
 export default Manage

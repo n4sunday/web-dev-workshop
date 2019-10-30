@@ -25,10 +25,19 @@ const Nav = () => (
       </li>
     </ul></div>
 
-
+    <style jsx global>{`
+        @font-face {
+          font-family: Roboto;
+          src: url(/static/font/Roboto-Regular.ttf);
+          font-weight: 600;
+        }
+        body {
+          margin: 0 !important;
+          font-family: 'Roboto';
+        }
+      `}</style>
     <style jsx>{`
       :global(body) {
-        margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
       }

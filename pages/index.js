@@ -1,20 +1,10 @@
-import Nav from '../components/nav'
+import Layout from '../layout/MainLayout'
+
 const HomePage = () => {
   return (
-    <div>
-      <Nav />
+    <Layout>
       Home
-      <style jsx global>{`
-        @font-face {
-          font-family: Roboto;
-          src: url(/static/font/Roboto-Regular.ttf);
-          font-weight: 600;
-        }
-        body {
-          font-family: 'Roboto';
-        }
-      `}</style>
-    </div>
+    </Layout>
   )
 }
 
