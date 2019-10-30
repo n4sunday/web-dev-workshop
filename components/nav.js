@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 const Nav = () => (
   <nav>
-    <ul>
+    <div><h2>Logo</h2></div>
+    <div><ul>
       <li>
         <Link href='/'>
           <a>Home</a>
@@ -15,7 +16,8 @@ const Nav = () => (
           <a>Product</a>
         </Link>
       </li>
-    </ul>
+    </ul></div>
+
 
     <style jsx>{`
       :global(body) {
@@ -25,6 +27,10 @@ const Nav = () => (
       }
       nav {
         text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       }
       ul {
         display: flex;
@@ -41,6 +47,9 @@ const Nav = () => (
         color: #067df7;
         text-decoration: none;
         font-size: 13px;
+        margin: 0 20px;
+      }
+      h2 {
         margin: 0 20px;
       }
     `}</style>
