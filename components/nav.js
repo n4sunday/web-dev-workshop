@@ -5,7 +5,7 @@ const Nav = () => (
   <nav>
     <div>
       <Link href='/'>
-        <h2>Logo</h2>
+        <h2>STOCK</h2>
       </Link>
     </div>
     <div><ul>
@@ -59,6 +59,10 @@ const Nav = () => (
       h2 {
         margin: 0 20px;
         cursor: pointer;
+        transition: linear 500ms;
+      }
+      h2:hover {
+        color: #067df7;
       }
     `}</style>
   </nav>
