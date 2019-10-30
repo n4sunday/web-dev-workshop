@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 const Nav = () => (
   <nav>
-    <div><h2>Logo</h2></div>
+    <div>
+      <Link href='/'>
+        <h2>Logo</h2>
+      </Link>
+    </div>
     <div><ul>
       <li>
         <Link href='/'>
@@ -14,6 +18,9 @@ const Nav = () => (
         </Link>
         <Link href='/product'>
           <a>Product</a>
+        </Link>
+        <Link href='/about'>
+          <a>About</a>
         </Link>
       </li>
     </ul></div>
@@ -51,6 +58,7 @@ const Nav = () => (
       }
       h2 {
         margin: 0 20px;
+        cursor: pointer;
       }
     `}</style>
   </nav>

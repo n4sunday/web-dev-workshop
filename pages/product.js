@@ -1,9 +1,11 @@
+import Nav from '../components/nav'
 const Product = () => {
-    return (
-        <div>
-            Product
-        </div>
-    )
+  return (
+    <div>
+      <Nav />
+      Product
+    </div>
+  )
 }
 
 export default Product

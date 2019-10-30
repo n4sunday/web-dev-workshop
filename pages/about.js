@@ -1,6 +1,11 @@
-const App = () => {
-    return (
-        <div>My App</div>
-    )
+import Nav from '../components/nav'
+const About = () => {
+  return (
+    <div>
+      <Nav />
+      About
+    </div>
+  )
 }
-export default App
+
+export default About
