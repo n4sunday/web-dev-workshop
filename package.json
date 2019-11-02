@@ -9,7 +9,10 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "9.1.2",
+    "next-images": "^1.2.0",
+    "node-sass": "^4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0"
   }
