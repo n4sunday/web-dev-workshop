@@ -1,4 +1,4 @@
-import Nav from '../components/Nav' 
+import Nav from '../components/nav'
 
 const MainLayout = props => {
     return (
