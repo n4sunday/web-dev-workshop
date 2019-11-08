@@ -56,7 +56,10 @@ const ProductList = ({ head = "Test" }) => {
                 }
                 @media (max-width: 425px) {
                     .main {
-                        width: 400px;
+                        width: 370px;
+                    }
+                    .top {
+                        width: 370px;
                     }
                 }
             `}</style>
