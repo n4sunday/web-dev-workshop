@@ -1,5 +1,24 @@
 import Card from './Card'
 
+const initailData = [
+    {
+        name: "Light Saber",
+        price: 150,
+        stock: 10,
+        des: "Cut everything",
+        des: "Cut everything",
+        img: "/static/img/Products/lightsaber.jpg"
+    },
+    {
+        name: "Light Saber",
+        price: 150,
+        stock: 10,
+        des: "Cut everything",
+        des: "Cut everything",
+        img: "/static/img/Products/lightsaber.jpg"
+    },
+]
+
 const ProductList = ({ dataon = false, data, head = "Test", headon = true }) => {
     return (
         <>
@@ -12,14 +31,14 @@ const ProductList = ({ dataon = false, data, head = "Test", headon = true }) => 
                 <div className="content">
                     {dataon ?
                         data.map((item) => (
-                            <Card name={item.name} des={item.des} price={item.price} stock={item.quantity} />
+                            <Card name={item.name} des={item.des} price={item.price} stock={item.quantity} img="/static/img/Products/lightsaber.jpg" />
                         ))
                         : <>
-                            <Card />
-                            <Card color="r" stock="Outstock" />
-                            <Card />
-                            <Card />
-                            <Card />
+                            <Card name="Light Saber" price="150" stock={10} des="Cut everything" des="Cut everything" img="/static/img/Products/lightsaber.jpg" inscreen="home" />
+                            <Card name="Light Saber" price="1500" stock={10} des="Cut everything" des="Cut everything" img="/static/img/Products/lightsaber.jpg" inscreen="home" />
+                            <Card name="Light Saber" price="200" stock={5} des="Cut everything" des="Cut everything" img="/static/img/Products/lightsaber.jpg" inscreen="home" />
+                            <Card name="Light Saber" price="25000" stock={0} des="Cut everything" des="Cut everything" img="/static/img/Products/lightsaber.jpg" inscreen="home" />
+                            <Card name="Light Saber" price="3000" stock={2} des="Cut everything" des="Cut everything" img="/static/img/Products/lightsaber.jpg" inscreen="home" />
                         </>
                     }
 

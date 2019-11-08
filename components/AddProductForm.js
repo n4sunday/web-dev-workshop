@@ -4,12 +4,16 @@ import { Button } from './Button'
 const AddProductForm = (props) => {
     const [name, setName] = useState('')
     const [des, setDes] = useState('')
-    const [quantity, setQuantity] = useState(0)
-    const [price, setPrice] = useState(0)
+    const [quantity, setQuantity] = useState('')
+    const [price, setPrice] = useState('')
     const [image, setImage] = useState('')
 
     const next = () => {
         props.handleCreate({ name, des, quantity, price })
+        setName('')
+        setDes('')
+        setQuantity('')
+        setPrice('')
     }
 
     return (
@@ -31,6 +35,7 @@ const AddProductForm = (props) => {
                         type="text"
                         onChange={(e) => setDes(e.target.value)}
                         value={des}
+                        placeholder="description"
                     />
                 </label>
                 <label>
@@ -40,6 +45,7 @@ const AddProductForm = (props) => {
                         type="number"
                         onChange={(e) => setPrice(+e.target.value)}
                         value={price}
+                        placeholder="price"
                     />
                 </label>
                 <label>
@@ -49,6 +55,7 @@ const AddProductForm = (props) => {
                         type="number"
                         onChange={(e) => setQuantity(+e.target.value)}
                         value={quantity}
+                        placeholder="quantity"
                     />
                 </label>
                 <label>
@@ -73,7 +80,7 @@ const AddProductForm = (props) => {
                     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
                 }
                 label {
-                    
+
                 }
                 p {
                     margin: 15px 0 5px 0;
@@ -91,10 +98,13 @@ const AddProductForm = (props) => {
                     outline: none;
                 }
                 textarea {
-                    padding-left: 10px; 
+                    padding: 10px 0 0 10px; 
                     font-size: 16px;
                     width: 90%;
+                    max-width: 90%;
+                    min-width: 90%;
                     height: 100px;
+                    min-height: 40px;
                     background-color: #f1f2f8;
                     border: 1px solid #d7dfe3;
                     border-radius: 3px;
@@ -126,6 +136,40 @@ const AddProductForm = (props) => {
                 }
                 button:focus {
                     outline: none;
+                }
+                @media (max-width: 768px) and (min-width: 426px) {
+                   
+                }
+                @media (max-width: 425px) {
+                    .form {
+                        padding: 15px;
+                        cursor: pointer;
+                        overflow: hidden;
+                        border: 1px solid #d7dfe3;
+                        border-radius: 4px;
+                        width: 320px;
+                        min-width: 320px;
+                        min-height: 470px;
+                        margin: 10px 15px;
+                        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+                    }
+                    .input {
+                        height: 30px;
+                        width: 90%;
+                        background-color: #f1f2f8;
+                        border: 1px solid #d7dfe3;
+                        font-size: 14px;
+                    }
+                    textarea {
+                        font-size: 14px;
+                        max-width: 90%;
+                        min-width: 90%;
+                        height: 70px;
+                        min-height: 40px;
+                        background-color: #f1f2f8;
+                        border: 1px solid #d7dfe3;
+                        border-radius: 3px;
+                    }
                 }
                 
             `}</style>

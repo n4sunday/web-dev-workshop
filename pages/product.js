@@ -36,18 +36,22 @@ const Product = () => {
                 }
                 .add {
                     width: 1200px;
-                  
                     display: flex;
                     align-items: center;
                     flex-direction: column;
                 }
                 @media (max-width: 768px ) and (min-width: 426px) {
                     main {
-                        width: 700px !important;
+                        width: 100%;
+                    }
+                    .add {
+                        width: 100%;
                     }
                 }
                 @media (max-width: 425px) {
-                    .add {height: 290px;}
+                    .add {
+                        width: 100%;
+                    }
                     
                 }
             `}</style>

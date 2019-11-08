@@ -1,15 +1,9 @@
 import Tag from './Tag'
 import { ButtonBuy } from './Button'
 
-const Card = ({
-    name = "Light Saber",
-    img = "/static/img/Products/lightsaber.jpg",
-    des = "Cut everything",
-    price = "15000",
-    stock = "Instock",
-    color = "g",
-    inscreen = "home"
-}) => {
+const Card = (props) => {
+    const { name, img, des, price, stock, color, inscreen } = props
+
     return (
         <>
             <div className="card">
@@ -19,12 +13,12 @@ const Card = ({
                         <h4>{name}</h4>
                         <div className="des">{des}</div>
                         <div className="stock">
-                            <Tag text={stock} color={color} />
+                            <Tag text={stock} reviwe={true} color={color} />
                             <div className="price"> ฿{price}</div>
                         </div>
                     </section>
                     <section className="footer">
-                        {inscreen === 'home' ? <ButtonBuy>Buy</ButtonBuy> : ''}
+                        {inscreen === 'home' ? <ButtonBuy>Buy</ButtonBuy> : <div className="manage"><ButtonBuy color="sec">Update</ButtonBuy ><ButtonBuy color="dan">Delete</ButtonBuy></div>}
                     </section>
                 </div>
             </div>
@@ -66,6 +60,9 @@ const Card = ({
                 }
                 .footer {
                     padding: 5px;
+                }
+                .manage {
+                    display: flex;
                 }
                 @media (max-width: 768px) and (min-width: 426px) {
                     .card {

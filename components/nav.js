@@ -18,11 +18,11 @@ const Nav = () => {
             <Link href='/'>
               <a>Home</a>
             </Link>
-            <Link href='/manage'>
-              <a>Manage</a>
-            </Link>
             <Link href='/product'>
               <a>Product</a>
+            </Link>
+            <Link href='/manage'>
+              <a>Manage</a>
             </Link>
             <Link href='/about'>
               <a>About</a>
@@ -51,16 +51,18 @@ const Nav = () => {
             </div>
 
             <div className="list">
+              <Link href='/product'>
+                <div className="a">Product</div>
+              </Link>
+            </div>
+
+            <div className="list">
               <Link href='/manage'>
                 <div className="a">Manage</div>
               </Link>
             </div>
 
-            <div className="list">
-              <Link href='/product'>
-                <div className="a">Product</div>
-              </Link>
-            </div>
+
 
             <div className="list">
               <Link href='/about'>
@@ -89,7 +91,6 @@ const Nav = () => {
       }
       nav {
         height: 55px;
-        width: 100vw;
         text-align: center;
         display: flex;
         justify-content: space-between;

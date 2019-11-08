@@ -1,7 +1,8 @@
-const Tag = ({ text = "Tag", color = "g" }) => {
+const Tag = (props) => {
+    const { text, color } = props
     return (
         <>
-            <span className={color}>{text}</span>
+            <span className={text > '9' ? 'g' : text == '0' ? 'r' : 'y'}>{text} {text > '9' ? 'Instock' : text == '0' ? 'Outstock' : 'Low'}</span>
             <style jsx>{`
                 span {
                     text-align: center;

@@ -27,7 +27,7 @@ const HomePage = () => {
           align-items: center;
         }
         .top {
-          width: 100vw;
+          width: 100%;
           height: 450px;
           display: flex;
           justify-content: center;
@@ -36,12 +36,9 @@ const HomePage = () => {
         img {
           height: 450px;
         }
-        .hot {
-
-        }
         @media (max-width: 425px) {
-          .top {height: 290px;}
-          img {height: 290px;}
+          .top {height: 260px;}
+          img {height: 260px;}
         }
         .search {
           display: flex;
