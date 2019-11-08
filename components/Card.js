@@ -7,7 +7,7 @@ const Card = (props) => {
     return (
         <>
             <div className="card">
-                <img src={img} alt="item" />
+                <div className="block-img"><img src={img} alt="item" /></div> 
                 <div className="block">
                     <section className="main">
                         <h4>{name}</h4>
@@ -37,8 +37,13 @@ const Card = (props) => {
                 .card:hover {
                     border: 1px solid #2c50ef;                    
                 }
-                img {
+                .block-img {
                     height: 150px;
+                    width: 200px;
+                    overflow: hidden;
+                }
+                img {
+                    width: 200px;
                 }
                 .main {
                     padding: 10px;
@@ -68,9 +73,15 @@ const Card = (props) => {
                     .card {
                         width: 190px;
                         min-width: 190px;
+                        height: 275px;
                     }
+                    .block-img {
+                        height: 140px;
+                        width: 190px;
+                        overflow: hidden;
+                     }
                     img {
-                        height: 150px;
+                        width: 190px;
                     }
                 }
                 @media (max-width: 425px) {
@@ -80,8 +91,13 @@ const Card = (props) => {
                         height: 125px;
                         margin: 8px 15px;
                     }
-                    img {
+                    .block-img {
                         height: 125px;
+                        width: 300px;
+                        overflow: hidden;
+                     }
+                    img {
+                        width: 155px;                           
                     }
                     .block {
                         width: 100%;

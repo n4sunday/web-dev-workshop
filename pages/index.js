@@ -15,8 +15,8 @@ const HomePage = () => {
           <Button>Search</Button>
         </section>
         <section className="hot">
-          <ProductList head="Hot" />
-          <ProductList head="Cool" />
+          <ProductList head="Hot" hot={true}/>
+          <ProductList head="Cool"/>
         </section>
       </main>
 
