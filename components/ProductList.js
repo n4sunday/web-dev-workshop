@@ -29,7 +29,7 @@ const ProductList = ({ dataon = false, hot , data, head = "Test", headon = true 
                 <div className="content">
                     {dataon ?
                         data.map((item) => (
-                            <Card name={item.name} des={item.des} price={item.price} stock={item.quantity} img="/static/img/Products/lightsaber.jpg" />
+                            <Card name={item.name} des={item.des} price={item.price} stock={item.quantity} img="/static/img/Products/Templar.jpg" />
                         ))
                         : hot ? 
                         <>
