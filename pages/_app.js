@@ -14,10 +14,13 @@ class MyApp extends App {
                 <style jsx global>{`
                     body {
                         font-family: 'Roboto', sans-serif;
-                        
+                        margin: 0;
                     }
                     ::-webkit-scrollbar {
                          width: 0;
+                    }
+                    input:focus {
+                        outline: none;
                     }
                 `}</style>
             </>

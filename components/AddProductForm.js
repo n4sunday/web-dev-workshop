@@ -94,9 +94,6 @@ const AddProductForm = (props) => {
                     font-size: 16px;
                     border-radius: 3px;
                 }
-                .input:focus {
-                    outline: none;
-                }
                 textarea {
                     padding: 10px 0 0 10px; 
                     font-size: 16px;

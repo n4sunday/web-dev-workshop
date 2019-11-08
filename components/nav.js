@@ -153,7 +153,7 @@ const Nav = () => {
         .burger span{
           margin: 3px 0;
           display: flex !important;
-          background-color: #111;
+          background-color: #484848;
           width: 28px;
           height: 3px;
         }
@@ -185,7 +185,6 @@ const Nav = () => {
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          
         }
         
         .menu .burger {
