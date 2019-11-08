@@ -1,7 +1,7 @@
-const Button = (props, { color = "primary" }) => {
+const Button = (props, { color = "primary" }, onClick) => {
     return (
         <>
-            <button className={`bt ${color}`}>
+            <button className={`bt ${color}`} onClick={onClick}>
                 {props.children}
             </button>
             <style jsx>{`
@@ -29,6 +29,40 @@ const Button = (props, { color = "primary" }) => {
     )
 }
 
+const ButtonBuy = (props, { color = "primary", onClick }) => {
+    return (
+        <>
+            <button className={`bt ${color}`} onClick={onClick}>
+                {props.children}
+            </button>
+            <style jsx>{`
+                .bt {
+                    cursor: pointer;
+                    padding: 5px;
+                    width: 100%;
+                    font-size: 16px;
+                    transition: 300ms linear;
+                    border-radius: 5px;
+                }
+                .bt:hover {
+                    background-color: #fff;                    
+                }
+                .primary {
+                    background-color: #fff;
+                    color: #1d1a4b;
+                    border: 2px solid #1d1a4b;
+                }
+                .primary:hover {
+                    background-color: #1d1a4b;
+                    color: #fff;
+                }
+                
+            `}</style>
+        </>
+    )
+}
+
 export {
     Button,
+    ButtonBuy
 }

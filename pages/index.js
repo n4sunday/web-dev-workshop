@@ -1,6 +1,7 @@
 import Layout from '../layout/MainLayout'
 import Search from '../components/Search'
 import { Button } from '../components/Button'
+import ProductList from '../components/ProductList'
 
 const HomePage = () => {
   return (
@@ -12,6 +13,10 @@ const HomePage = () => {
         <section className="search">
           <Search />
           <Button>Search</Button>
+        </section>
+        <section className="hot">
+          <ProductList head="Hot" />
+          <ProductList head="Cool" />
         </section>
       </main>
 
@@ -30,6 +35,9 @@ const HomePage = () => {
         }
         img {
           height: 450px;
+        }
+        .hot {
+
         }
         @media (max-width: 425px) {
           .top {height: 290px;}
