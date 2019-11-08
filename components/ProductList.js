@@ -1,20 +1,28 @@
 import Card from './Card'
 
-const ProductList = ({ head = "Test" }) => {
+const ProductList = ({ dataon = false, data, head = "Test", headon = true }) => {
     return (
         <>
             <main className="main">
-                <div className="top">
+                {headon ? <div className="top">
                     <span className={head}>{head}</span>
                     Product
                     <div className="line"></div>
-                </div>
+                </div> : ''}
                 <div className="content">
-                    <Card />
-                    <Card />
-                    <Card color="r" />
-                    <Card />
-                    <Card />
+                    {dataon ?
+                        data.map((item) => (
+                            <Card name={item.name} des={item.des} price={item.price} stock={item.quantity} />
+                        ))
+                        : <>
+                            <Card />
+                            <Card color="r" stock="Outstock" />
+                            <Card />
+                            <Card />
+                            <Card />
+                        </>
+                    }
+
                 </div>
             </main>
             <style jsx>{`

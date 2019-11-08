@@ -1,4 +1,4 @@
-const Button = (props, { color = "primary" }, onClick) => {
+const Button = (props, { color = "primary",onClick } ) => {
     return (
         <>
             <button className={`bt ${color}`} onClick={onClick}>

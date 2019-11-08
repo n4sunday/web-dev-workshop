@@ -8,7 +8,7 @@ const Tag = ({ text = "Tag", color = "g" }) => {
                     cursor: pointer;
                     font-size: 12px;
                     padding: 3px 0;
-                    width: 60px;
+                    width: 80px;
                     border-radius: 25px;
                     color: #fff;
                 }

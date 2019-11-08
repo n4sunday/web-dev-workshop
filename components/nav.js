@@ -85,8 +85,7 @@ const Nav = () => {
       `}</style>
       <style jsx>{`
       :global(body) {
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
+ 
       }
       nav {
         height: 55px;
