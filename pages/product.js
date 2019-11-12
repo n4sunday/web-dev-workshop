@@ -7,7 +7,7 @@ const Product = () => {
     const [products, setProducts] = useState([])
 
     const handleCreate = (data) => {
-        products.push(data)
+        products.unshift(data)
         let temp = products
         setProducts([...temp])
     }

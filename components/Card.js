@@ -6,8 +6,8 @@ const Card = (props) => {
 
     return (
         <>
-            <div className="card">
-                <div className="block-img"><img src={img} alt="item" /></div> 
+            <div className="card" >
+                <div className="block-img" onClick={props.onClick}><img src={img} alt="item" /></div>
                 <div className="block">
                     <section className="main">
                         <h4>{name}</h4>

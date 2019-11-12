@@ -27,6 +27,9 @@ const Nav = () => {
             <Link href='/about'>
               <a>About</a>
             </Link>
+            <Link href='/login'>
+              <a>Login</a>
+            </Link>
           </li>
         </ul>
 
@@ -62,11 +65,15 @@ const Nav = () => {
               </Link>
             </div>
 
-
-
             <div className="list">
               <Link href='/about'>
                 <div className="a">About</div>
+              </Link>
+            </div>
+
+            <div className="list">
+              <Link href='/login'>
+                <div className="a">Login</div>
               </Link>
             </div>
           </div>
@@ -113,6 +120,8 @@ const Nav = () => {
       li {
         display: flex;
         padding: 6px 8px;
+        cursor: pointer;
+        user-select: none;
       }
       a {
         color: #067df7;
