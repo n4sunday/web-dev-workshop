@@ -43,6 +43,7 @@ export default WrapComponent => {
                         top: 0;
                         width: 100vw;
                         height: 100vh;
+                        position: absolute;
                     }
                     .i {
                         margin: 20px 10px;
