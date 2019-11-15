@@ -38,7 +38,9 @@ export default WrapComponent => {
                         z-index: 10;
                         overflow: hidden;
                     }
-                    .bt-close {                       
+                    .bt-close {    
+                        cursor: pointer;
+                        user-select: none;                   
                         z-index: 11;
                         top: 0;
                         width: 100vw;
@@ -61,6 +63,16 @@ export default WrapComponent => {
                     .show img {
                         z-index: 11;
                         border-radius: 5px;
+                        margin-top: 0px;
+                        animation: mymove 200ms;
+                    }
+                    @keyframes mymove {
+                        0% {
+                            margin-top: -800px;
+                        }
+                        100% {
+                            margin-top: 0px;
+                        }
                     }
                     @media (max-width: 425px) {
                         .show img {
