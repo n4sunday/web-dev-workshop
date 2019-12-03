@@ -3,7 +3,7 @@ import Nav from '../components/nav'
 const MainLayout = props => {
     return (
         <>
-            <Nav />
+            <Nav UserDisplay={props.UserDisplay} />
             {props.children}
         </>
     )

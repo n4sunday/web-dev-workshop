@@ -18,7 +18,11 @@ const Card = (props) => {
                         </div>
                     </section>
                     <section className="footer">
-                        {inscreen === 'home' ? <ButtonBuy>Buy</ButtonBuy> : <div className="manage"><ButtonBuy color="sec">Update</ButtonBuy ><ButtonBuy color="dan">Delete</ButtonBuy></div>}
+                        {inscreen === 'home' ? <ButtonBuy>Buy</ButtonBuy> : 
+                        <div className="manage">
+                            <ButtonBuy color="sec" onUpdate={props.onUpdate}>Update</ButtonBuy >
+                            <ButtonBuy color="dan" onDelete={props.onDelete}>Delete</ButtonBuy>
+                        </div>}
                     </section>
                 </div>
             </div>

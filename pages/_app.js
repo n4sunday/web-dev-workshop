@@ -1,5 +1,7 @@
 import React from 'react'
 import App from 'next/app'
+import withReduxStore from '../lib/withReduxStore'
+import { Provider } from 'react-redux'
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -7,10 +9,13 @@ class MyApp extends App {
         return { pageProps };
     }
     render() {
-        const { Component, pageProps } = this.props
+        const { Component, pageProps, reduxStore } = this.props
         return (
             <>
-                <Component {...pageProps} />
+                <Provider store={reduxStore}>
+                    <Component {...pageProps} />
+                </Provider>
+
                 <style jsx global>{`
                     body {
                         font-family: 'Roboto', sans-serif;
@@ -28,4 +33,4 @@ class MyApp extends App {
     }
 }
 
-export default MyApp
+export default withReduxStore(MyApp)

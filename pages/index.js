@@ -2,10 +2,17 @@ import Layout from '../layout/MainLayout'
 import Search from '../components/Search'
 import { Button } from '../components/Button'
 import ProductList from '../components/ProductList'
+import { useEffect } from 'react'
+import Router from 'next/router'
+import withAuthenticated from '../hoc/withAuthenticated'
+import { compose } from 'redux'
 
-const HomePage = () => {
+const HomePage = (props) => {
+  useEffect(() => {
+
+  }, [])
   return (
-    <Layout>
+    <Layout UserDisplay={props.User.data.displayName}>
       <main>
         <section className="top">
           <img src="/static/img/home.png" alt="home" />
@@ -15,8 +22,8 @@ const HomePage = () => {
           <Button>Search</Button>
         </section>
         <section className="hot">
-          <ProductList head="Hot" hot={true}/>
-          <ProductList head="Cool"/>
+          <ProductList head="Hot" hot={true} />
+          <ProductList head="Cool" />
         </section>
       </main>
 
@@ -49,4 +56,6 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default compose(
+  withAuthenticated
+)(HomePage)

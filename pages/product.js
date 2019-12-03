@@ -1,28 +1,61 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AddProductForm from '../components/AddProductForm'
 import Layout from '../layout/MainLayout'
 import ProductList from '../components/ProductList'
+import withAuthenticated from '../hoc/withAuthenticated'
+import { compose } from 'redux'
+import firebase from 'firebase'
+import { auth } from '../config/firebase'
 
-const Product = () => {
+const Product = (props) => {
     const [products, setProducts] = useState([])
 
-    const handleCreate = (data) => {
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const handleCreateProduct = (data) => {
         products.unshift(data)
         let temp = products
         setProducts([...temp])
     }
 
+    const fetchData = () => {
+        var userId = firebase.auth().currentUser.uid
+        var ref = firebase.database().ref()
+        ref.on("value",
+            (snapshot) => {
+                console.log(snapshot.val());
+            }, (error) => {
+                console.log("Error: " + error.code)
+            })
+    }
+
+    const handleUpdateProduct = (data) => {
+
+    }
+
+    const handleDeleteProduct = (data) => {
+
+    }
+
     return (
         <>
-            <Layout>
+            <Layout UserDisplay={props.User.data.displayName}>
                 <main>
                     <section className="add">
                         <h2>Add Product</h2>
-                        <AddProductForm handleCreate={handleCreate} />
+                        <AddProductForm handleCreate={handleCreateProduct} />
                     </section>
                     <section className="product">
                         <h2>Product List</h2>
-                        <ProductList headon={false} data={products} dataon={true} />
+                        <ProductList
+                            headon={false}
+                            data={products}
+                            dataon={true}
+                            onUpdate={handleUpdateProduct}
+                            onDelete={handleDeleteProduct}
+                        />
                     </section>
                 </main>
 
@@ -59,4 +92,6 @@ const Product = () => {
     )
 }
 
-export default Product
+export default compose(
+    withAuthenticated
+)(Product)

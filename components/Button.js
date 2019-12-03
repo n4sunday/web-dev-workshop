@@ -29,11 +29,11 @@ const Button = (props, { color = "primary", onClick }) => {
     )
 }
 
-const ButtonBuy = ({ children, color, onClick }) => {
+const ButtonBuy = (props) => {
     return (
         <>
-            <button className={`bt ${color}`} onClick={onClick}>
-                {children}
+            <button className={`bt ${props.color}`} onClick={props.onClick}>
+                {props.children}
             </button>
             <style jsx>{`
                 .bt {

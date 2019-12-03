@@ -65,6 +65,7 @@ export default WrapComponent => {
                         border-radius: 5px;
                         margin-top: 0px;
                         animation: mymove 200ms;
+                        max-height: 600px;
                     }
                     @keyframes mymove {
                         0% {

@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { auth } from '../config/firebase'
+import Router from 'next/router'
+import firebase from 'firebase'
 
 const FormLogin = () => {
-    const [email, setEmail] = useState('')
-    const [pass, setPass] = useState('')
+    const [email, setEmail] = useState('test@test.com')
+    const [pass, setPass] = useState('123456')
     const [message, setMes] = useState({
         status: false,
         text: '',
@@ -15,6 +18,15 @@ const FormLogin = () => {
             setMes({ ...message, status: true, text: 'Invalid email and password' })
             resetAlert()
         }
+        auth.signInWithEmailAndPassword(email, pass)
+            .then(res => {
+                if (res.user) {
+                    Router.push('/')
+                }
+            })
+            .catch(error => {
+                setMes({ ...message, status: true, text: 'Incorrect email and password' })
+            })
     }
 
     const checkEmail = () => {
@@ -44,11 +56,11 @@ const FormLogin = () => {
 
                 <label>
                     <p>Email</p>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkEmail} onClick={() => setMes({ status: false })} />
+                    <input type="email" onChange={(e) => setEmail(e.target.value)} onBlur={checkEmail} onClick={() => setMes({ status: false })} value={email} />
                 </label>
                 <label>
                     <p>Password</p>
-                    <input type="password" onChange={(e) => setPass(e.target.value)} />
+                    <input type="password" onChange={(e) => setPass(e.target.value)} value={pass} />
                 </label>
                 <button onClick={login}>Login</button>
             </div>

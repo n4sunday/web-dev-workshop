@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-const Nav = () => {
+const Nav = (props) => {
   const [logo, setLogo] = useState('/static/img/Logo.PNG')
   const [open, setOpen] = useState(false)
 
@@ -28,7 +28,7 @@ const Nav = () => {
               <a>About</a>
             </Link>
             <Link href='/login'>
-              <a>Login</a>
+              <a> {props.UserDisplay ? props.UserDisplay : 'Login'}</a>
             </Link>
           </li>
         </ul>

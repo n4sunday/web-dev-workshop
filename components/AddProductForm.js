@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button } from './Button'
+import { database } from '../config/firebase'
 
 const AddProductForm = (props) => {
     const [name, setName] = useState('')
@@ -9,7 +10,9 @@ const AddProductForm = (props) => {
     const [image, setImage] = useState('')
 
     const next = () => {
-        props.handleCreate({ name, des, quantity, price })
+        // props.handleCreate({ name, des, quantity, price })
+        const product = { name, des, quantity, price }
+        database.push(product)
         setName('')
         setDes('')
         setQuantity('')
